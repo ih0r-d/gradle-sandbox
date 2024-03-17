@@ -15,6 +15,7 @@ compileJava {
     options.incremental = true
     options.fork = true
     options.failOnError = false
+    options.release = 21
 }
 
 repositories {
