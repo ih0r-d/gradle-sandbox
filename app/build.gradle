@@ -8,6 +8,13 @@
 plugins {
     // Apply the application plugin to add support for building a CLI application in Java.
     id 'application'
+    id 'java-library'
+}
+
+compileJava {
+    options.incremental = true
+    options.fork = true
+    options.failOnError = false
 }
 
 repositories {
