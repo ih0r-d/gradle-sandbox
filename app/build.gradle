@@ -1,6 +1,19 @@
+buildscript {
+    dependencies {
+        classpath 'gradle.sandbox:task:1.0-SNAPSHOT'
+    }
+}
+
 plugins {
     id 'application'
+    id 'groovy'
 }
+
+
+tasks.register('greeting', org.demo.GreetingTask) {
+    greeting = 'howdy!'
+}
+
 
 compileJava {
     options.incremental = true
@@ -14,6 +27,7 @@ repositories {
 }
 
 dependencies {
+    implementation gradleApi()
     testImplementation("org.junit.jupiter:junit-jupiter:5.9.1")
     implementation("com.google.guava:guava:32.1.2-jre")
 }
